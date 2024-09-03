@@ -1,14 +1,15 @@
+import { ReactNode } from "react";
+
 interface ButtonProps {
-    children: string;
-    color?: 'primary' | 'secondary' | 'danger' | 'light';
+    children: string | ReactNode;
     onClick: () => void;
 };
 
-const Button = ({ children, color = 'light', onClick }: ButtonProps) => {
+const Button = ({ children, onClick }: ButtonProps) => {
   return (
     <button
         type="button"
-        className={"btn btn-" + color}
+        className="btn bg-transparent"
         onClick={onClick}
     >
             {children}
@@ -16,4 +17,4 @@ const Button = ({ children, color = 'light', onClick }: ButtonProps) => {
   )
 }
 
-export default Button
+export default Button;

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+test.txt
+src/components/LatexExample.tsx
+src/components/ListGroup.tsx

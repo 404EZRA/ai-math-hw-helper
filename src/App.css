@@ -3,8 +3,8 @@
     height: 100vh;
   }
   
-  .input-component,
-  .output-component {
+.input-component,
+.output-component {
     flex: 1;
     margin: 20px;
     padding: 10px;
@@ -13,32 +13,32 @@
     flex-direction: row;
     width: 45%;
 
-  }
-  
-  .input-section {
+}
+
+.input-section {
     background-color: #f0f0f0;
     border: 15px solid #f0f0f0;
     display: flex;
     flex-direction: column;
-  }
-  
-  .output-section {
+}
+
+.output-section {
     background-color: #ffffff;
     border: 15px solid #ffffff;
     display: flex;
     flex-direction: column;
-  }
-  
-  textarea {
+}
+
+textarea {
     flex: 1;
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
     resize: none;
-  }
-  
-  button {
+}
+
+button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -46,9 +46,9 @@
     color: #fff;
     border: none;
     border-radius: 4px;
-  }
-  
-  .output-box {
+}
+
+.output-box {
     flex: 1;
     border: 1px solid #ddd;
     padding: 20px;
@@ -56,5 +56,9 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     background-color: #f9f9f9;
-  }
-  
+}
+
+.latex-preview {
+    margin-top: 10%;
+    word-break: break-all;
+}
