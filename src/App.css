@@ -1,25 +1,31 @@
 .App {
     display: flex;
     height: 100vh;
-  }
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
   
 .input-component,
 .output-component {
-    flex: 1;
-    margin: 20px;
+    margin: px;
     padding: 10px;
     box-sizing: border-box;
     display: inline-block;
     flex-direction: row;
+    word-wrap: break-word;
     width: 45%;
-
 }
 
 .input-section {
-    background-color: #f0f0f0;
-    border: 15px solid #f0f0f0;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .output-section {
@@ -27,38 +33,41 @@
     border: 15px solid #ffffff;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 textarea {
-    flex: 1;
-    width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
     resize: none;
+    border-radius: 10px;
 }
 
 button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #242424;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .output-box {
-    flex: 1;
     border: 1px solid #ddd;
     padding: 20px;
     font-size: 16px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
     background-color: #f9f9f9;
 }
 
 .latex-preview {
-    margin-top: 10%;
-    word-break: break-all;
+    margin-top: 5%;
+}
+
+.latex-preview-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 16px;
+    background-color: #f9f9f9;
 }

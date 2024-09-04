@@ -37,28 +37,30 @@ function App() {
     return (
     <div>
         <Header />
-        <div className="input-component">
-            <div className="input-section">
-                <h2>Write your question here...</h2>
-                <textarea
-                    className='text-area'
-                    rows={10}
-                    value={input}
-                    onChange={handleInputChange}
-                    placeholder="Type your question here..."
-                />
-                <button onClick={handleGenerateOutput}>Generate AI Output</button>
-                <div className="latex-preview">
-                    <h4>LaTeX Preview</h4>
-                        <div className='latex-preview-container'>{renderContent(input)}</div>
+        <div className='content'>
+            <div className="input-component">
+                <div className="input-section">
+                    <h2>Write your question here...</h2>
+                    <textarea
+                        className='text-area'
+                        rows={10}
+                        value={input}
+                        onChange={handleInputChange}
+                        placeholder="Type your question here..."
+                    />
+                    <button onClick={handleGenerateOutput}>Generate AI Output</button>
+                    <div className="latex-preview">
+                        <h4>LaTeX Preview</h4>
+                            <div className='latex-preview-container'>{renderContent(input)}</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div className='output-component'>
-            <div className="output-section">
-                <h2>Calcubot Response</h2>
-                <div className="output-box">
-                    {renderLatexOutput()}
+            <div className='output-component'>
+                <div className="output-section">
+                    <h2>Calcubot Response</h2>
+                    <div className="output-box">
+                        {renderLatexOutput()}
+                    </div>
                 </div>
             </div>
         </div>

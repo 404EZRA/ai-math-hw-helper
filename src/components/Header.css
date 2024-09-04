@@ -1,23 +1,51 @@
-.navbar {
-    padding: 0;
+.accordion {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    padding: 5px;
+    justify-content: space-evenly;
 }
 
-.navbar-container {
+.accordion-header {
+    padding: 10px;
     width: 100%;
-    background-color: #c9cdd8;
+    align-items: end;
+    cursor: pointer;
+    font-size: 16px;
     padding: 5px;
-    justify-content: flex-end;
+}
+
+.accordion-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+.accordion-header:hover {
+    background-color: #ddd;
 }
 
 .icon {
     transition: transform 0.3s ease, color 0.3s ease;
 }
   
-.icon.clicked {
+.icon.open {
     transition: transform 0.3s ease, color 0.3s ease;
     overflow: hidden;
     transform: rotate(90deg);
     color: red;
     max-height: 35px;
     max-width: 35px;
+}
+
+input [type=text] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px #dddddd;
+    padding: 5px;
 }
