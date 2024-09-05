@@ -1,0 +1,31 @@
+.button-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;                    /* Space between buttons */
+    padding: 5px;                /* Padding around the panel */
+    background-color: #f1f1f1;    /* Background color of the panel */
+    border: 1px solid #ddd;       /* Border around the panel */
+    border-radius: 5px;           /* Rounded corners */
+}
+
+.button-panel button {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.button-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
+.button-panel button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}

@@ -4,17 +4,19 @@ import './App.css';
 import Header from './components/Header';
 import LatexTyping from './components/LatexTyping';
 import Latex from 'react-latex-next';
+import ButtonPanel from './components/ButtonPanel';
 
 function App() {
     const [input, setInput] = useState('');
     const [output, setOutput] = useState('');
+    const [apiKey, setApiKey] = useState('');
 
     const handleInputChange = (e: BaseSyntheticEvent) => {
         setInput(e.target.value);
     };
 
     const renderContent = (text: string) => {
-        const parts = text.split(/(\$.*?\$|\$\$.*?\$\$)/g); // Regex to match LaTeX within $...$ or $$...$$
+        const parts = text.split(/(\$.*?\$|)/g);
         return parts.map((part, index) => {
             if (part.startsWith('$') && part.endsWith('$')) {
                 return <InlineMath key={index} math={part.slice(1, -1)} />;
@@ -26,13 +28,16 @@ function App() {
       };
 
     const handleGenerateOutput = () => {
-        // setOutput(`${input.split('').reverse().join('')}`);
         setOutput(input);
     };
 
     const renderLatexOutput = () => {
         return <LatexTyping text={output} />;
     };
+
+    const insertLatex = (latex: string) => {
+        setInput(input + latex);
+    }
 
     return (
     <div>
@@ -41,6 +46,7 @@ function App() {
             <div className="input-component">
                 <div className="input-section">
                     <h2>Write your question here...</h2>
+                    <ButtonPanel insertLatex={insertLatex}/>
                     <textarea
                         className='text-area'
                         rows={10}
