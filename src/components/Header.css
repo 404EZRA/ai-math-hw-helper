@@ -1,17 +1,20 @@
-.accordion {
+.header {
     border: 1px solid #ffffff;
     background-color: #ffffff;
     border-radius: 4px;
     overflow: hidden;
     width: 100%;
-    padding: 5px;
-    justify-content: space-evenly;
+    margin: 5px;
+    justify-content: flex-end;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .accordion-header {
     padding: 10px;
+    display: flex;
     width: 100%;
-    align-items: end;
+    align-items: center;
     cursor: pointer;
     font-size: 16px;
     padding: 5px;
@@ -26,26 +29,63 @@
     border: 1px solid #dddddd;
 }
 
-.accordion-header:hover {
-    background-color: #ddd;
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.icon {
+.settings-icon {
     transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 35px;
+    color: #888888;
+    margin-left: auto;
 }
   
-.icon.open {
-    transition: transform 0.3s ease, color 0.3s ease;
-    overflow: hidden;
-    transform: rotate(90deg);
+.settings-icon.open {
     color: red;
-    max-height: 35px;
-    max-width: 35px;
+    animation: spin 1s ease-in-out;
 }
 
-input [type=text] {
+.api-key-component {
+    background-color: #e2e2e2;
     width: 50%;
-    box-sizing: border-box;
-    border: 2px #dddddd;
-    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.api-key-input {
+    border: none;
+    padding: 10px;
+    flex: 1;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.visibility-button {
+    color: #888888;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.disclaimer {
+    font-size: small;
+    font-style: italic;
+    color: #888888;
 }

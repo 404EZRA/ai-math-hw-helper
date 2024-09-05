@@ -1,6 +1,5 @@
 .App {
     display: flex;
-    height: 100vh;
 }
 
 .content {
@@ -10,7 +9,6 @@
   
 .input-component,
 .output-component {
-    margin: px;
     padding: 10px;
     box-sizing: border-box;
     display: inline-block;
