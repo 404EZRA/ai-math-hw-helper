@@ -32,7 +32,7 @@ const Header = () => {
                 {isOpen && (
                 <div className="accordion-content">
                     <h4>Settings</h4>
-                    <div className="api-key-component">
+                    <div className="input">
                         <input
                             type={isVisible ? 'text' : 'password'}
                             className='api-key-input'

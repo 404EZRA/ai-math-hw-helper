@@ -1,18 +1,28 @@
-import { BaseSyntheticEvent, useState } from 'react';
+import { BaseSyntheticEvent, useRef, useState } from 'react';
 import { InlineMath } from 'react-katex';
-import './App.css';
 import Header from './components/Header';
 import LatexTyping from './components/LatexTyping';
-import Latex from 'react-latex-next';
 import ButtonPanel from './components/ButtonPanel';
+import 'katex/dist/katex.min.css';
+import './App.css';
 
 function App() {
-    const [input, setInput] = useState('');
-    const [output, setOutput] = useState('');
-    const [apiKey, setApiKey] = useState('');
+    const [input, setInput] = useState<string>('');
+    const [output, setOutput] = useState<string>('');
+    const [apiKey, setApiKey] = useState<string>('');
+    const [toggleInline, setToggleInline] = useState<boolean>(true);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const handleInputChange = (e: BaseSyntheticEvent) => {
         setInput(e.target.value);
+    };
+
+    const handleToggleInline = () => {
+        setToggleInline(!toggleInline);
+    }
+
+    const handleGenerateOutput = () => {
+        setOutput(input);
     };
 
     const renderContent = (text: string) => {
@@ -27,16 +37,13 @@ function App() {
         });
       };
 
-    const handleGenerateOutput = () => {
-        setOutput(input);
-    };
-
     const renderLatexOutput = () => {
         return <LatexTyping text={output} />;
     };
 
     const insertLatex = (latex: string) => {
-        setInput(input + latex);
+        var cursorPosition = textareaRef.current?.selectionStart;
+        setInput(input.slice(0, cursorPosition) + latex + input.slice(cursorPosition, input.length + 1));
     }
 
     return (
@@ -48,8 +55,9 @@ function App() {
                     <h2>Write your question here...</h2>
                     <ButtonPanel insertLatex={insertLatex}/>
                     <textarea
+                        ref={textareaRef}
                         className='text-area'
-                        rows={10}
+                        rows={5}
                         value={input}
                         onChange={handleInputChange}
                         placeholder="Type your question here..."
@@ -57,6 +65,7 @@ function App() {
                     <button onClick={handleGenerateOutput}>Generate AI Output</button>
                     <div className="latex-preview">
                         <h4>LaTeX Preview</h4>
+                        <span>LaTeX expressions must be wrapped between $. Example: {'$\\frac{a}{b} + \\frac{c}{d}$'}</span>
                             <div className='latex-preview-container'>{renderContent(input)}</div>
                     </div>
                 </div>
