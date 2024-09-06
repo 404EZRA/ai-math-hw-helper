@@ -10,16 +10,11 @@ function App() {
     const [input, setInput] = useState<string>('');
     const [output, setOutput] = useState<string>('');
     const [apiKey, setApiKey] = useState<string>('');
-    const [toggleInline, setToggleInline] = useState<boolean>(true);
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const handleInputChange = (e: BaseSyntheticEvent) => {
         setInput(e.target.value);
     };
-
-    const handleToggleInline = () => {
-        setToggleInline(!toggleInline);
-    }
 
     const handleGenerateOutput = () => {
         setOutput(input);
